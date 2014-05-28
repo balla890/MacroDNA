@@ -1,0 +1,61 @@
+
+
+; ritorna
+
+repeat
+{
+if #CHARPOSX > 2273                                       ; EVITA ISOLE
+   {
+   wait 20
+   event macro 1 0 Forward
+   repeat
+         wait 12
+         ;gosub controllo ------------------------------
+   until #CHARPOSX = 2273
+
+   }
+   else
+   {
+   
+   event macro 1 0 Back
+   repeat
+         wait 12
+         ;gosub controllo ------------------------------
+   until #CHARPOSX = 2273
+   event macro 1 0 Stop
+   }
+}
+until #CHARPOSX <> 2273
+   
+repeat
+{
+if #CHARPOSY > 2886
+   {
+   wait 20
+   event macro 1 0 Right
+   repeat
+         wait 12
+         ;gosub controllo ------------------------------
+   until #CHARPOSX = 2886
+
+   }
+   else
+   {
+
+
+   event macro 1 0 Left
+   repeat
+         wait 12
+         ;gosub controllo ------------------------------
+   until #CHARPOSX = 2886
+    event macro 1 0 Stop
+   }
+}
+until #CHARPOSX <> 2886
+   
+event macro 1 0 Right
+wait 100
+event macro 1 0 Arrivato
+halt
+
+
