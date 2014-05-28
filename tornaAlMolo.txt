@@ -1,0 +1,27 @@
+
+set %molox 2092
+set %moloy 2849
+event sysMessage io mi trovo in #charposx #charposy
+
+while #charposy > %moloy + 2
+{
+     set %pre #charposy
+     event macro 1 0 right
+     wait 5
+     if %pre = #charposy
+        gosub
+
+
+}
+while #charposy < %moloy - 2
+{
+     event macro 1 0 left
+     wait 5
+}
+while #charposx > %molox + 2
+{
+     event macro 1 0 forward
+     wait 5
+}
+ event macro 1 0 stop
+halt
